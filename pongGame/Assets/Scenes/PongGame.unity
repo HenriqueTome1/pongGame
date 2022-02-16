@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 623551286}
   m_Layer: 0
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,6 +455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030995738}
+  - component: {fileID: 1030995739}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -471,11 +472,25 @@ Transform:
   m_GameObject: {fileID: 1030995737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030995739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030995737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e089b8339c592642a83f9b95e9d4bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPrefab: {fileID: 4149718257118960849, guid: 2da5670cc23c81e42b47851d1769c26e, type: 3}
+  ballSpeed: 15
 --- !u!1 &1703286234
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +613,7 @@ GameObject:
   - component: {fileID: 1737538300}
   m_Layer: 0
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: LeftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
