@@ -1,38 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private Vector3 direction;
-    void Start()
-    {
-        direction = new Vector3(1, 0, 0);
+    public float speed = 200f;
+    private Rigidbody2D _rigidbody;
+
+    private void Awake() {
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Start() {
+        InitialForce();
     }
 
-    private void FixedUpdate()
-    {
+    private void InitialForce() {
+        float x = Random.value < 0.5f ? -1f : 1f; 
+        float y = Random.value < 0.5f ? Random.Range(-1f, -0.5f) : 
+                                        Random.Range(0.5f, 1f);
+        Vector2 direction = new Vector2(x,y);
+        _rigidbody.AddForce(direction * this.speed);
     }
 
-    public Vector3 getDirection()
-    {
-        return direction;
+    public void AddForce(Vector2 force) {
+        _rigidbody.AddForce(force);
     }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "LeftWall" || collision.tag == "RightWall")
-        {
-            // Points ++
-            transform.position = Vector3.zero;
-            direction = direction * -1;
-        }
-    }
+    
 }
