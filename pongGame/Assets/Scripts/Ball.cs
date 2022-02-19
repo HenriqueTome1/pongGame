@@ -10,10 +10,16 @@ public class Ball : MonoBehaviour
     }
 
     private void Start() {
+        ResetPosition();
         InitialForce();
     }
 
-    private void InitialForce() {
+    public void ResetPosition() {
+        _rigidbody.position = Vector3.zero;
+        _rigidbody.velocity = Vector3.zero;
+    }
+
+    public void InitialForce() {
         float x = Random.value < 0.5f ? -1f : 1f; 
         float y = Random.value < 0.5f ? Random.Range(-1f, -0.5f) : 
                                         Random.Range(0.5f, 1f);
@@ -24,5 +30,4 @@ public class Ball : MonoBehaviour
     public void AddForce(Vector2 force) {
         _rigidbody.AddForce(force);
     }
-    
 }
